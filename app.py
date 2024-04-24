@@ -25,9 +25,7 @@ if submit and email == actual_email and password == actual_password:
     # If the form is submitted and the email and password are correct,
     # clear the form/container and display a success message
     placeholder.empty()
-    conn.execute('INSERT INTO mytable (name, pword, waktu) VALUES (:name, :pword, :waktu);',
-                 params=dict(owner=email, pet=password, waktu=waktus))
-    conn.commit()
+    st_supabase_client.table("mytable").insert([{"name":email, "pword":password, 'waktu':waktus}], count="None").execute()
     home_menu()
     st.success("Login successful")
     #authenticated_menu()
