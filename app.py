@@ -4,14 +4,6 @@ import openpyxl
 from openpyxl import load_workbook
 import time
 
-from st_supabase_connection import SupabaseConnection
-
-# Initialize connection.
-conn = st.connection("supabase",type=SupabaseConnection)
-
-# Perform query.
-rows = conn.query("*", table="mytable", ttl="10m").execute()
-
 # Create an empty container
 placeholder = st.empty()
 
