@@ -10,6 +10,10 @@ def unauthenticated_menu():
     # Show a navigation menu for unauthenticated users
     st.switch_page("app.py")
 
+def home_menu():
+    # Show a navigation menu for unauthenticated users
+    st.switch_page("pages/1_Home.py")
+
 def menu():
     return authenticated_menu()
 
