@@ -10,3 +10,4 @@ yellowbrick==1.4
 yattag
 xlsxwriter
 st-gsheets-connection
+gspread
