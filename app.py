@@ -2,6 +2,7 @@ import streamlit as st
 from menu import authenticated_menu
 #from streamlit_gsheets import GSheetsConnection
 import time
+import gspread
 
 gc = gspread.service_account()
 
