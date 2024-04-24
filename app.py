@@ -1,5 +1,5 @@
 import streamlit as st
-from menu import authenticated_menu
+from menu import authenticated_menu, home_menu
 from streamlit_gsheets import GSheetsConnection
 import time
 
@@ -26,7 +26,8 @@ if submit and email == actual_email and password == actual_password:
     placeholder.empty()
     st.success("Login successful")
     #df.write({"User":email, "Password":password, "Timestamp":timestamp})
-    authenticated_menu()
+    home_menu()
+    #authenticated_menu()
 elif submit and email != actual_email and password != actual_password:
     st.error("Login failed")
 else:
