@@ -9,5 +9,3 @@ openpyxl
 yellowbrick==1.4
 yattag
 xlsxwriter
-mysqlclient
-SQLAlchemy
