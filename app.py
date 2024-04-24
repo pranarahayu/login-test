@@ -24,8 +24,8 @@ if submit and email == actual_email and password == actual_password:
     # If the form is submitted and the email and password are correct,
     # clear the form/container and display a success message
     placeholder.empty()
-    st.success("Login successful")
     home_menu()
+    st.success("Login successful")
     #authenticated_menu()
 elif submit and email != actual_email and password != actual_password:
     st.error("Login failed")
