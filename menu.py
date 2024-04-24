@@ -8,7 +8,7 @@ def authenticated_menu():
 
 def unauthenticated_menu():
     # Show a navigation menu for unauthenticated users
-    st.sidebar.page_link("app.py", label="Log in")
+    st.switch_page("app.py")
 
 def menu():
     return authenticated_menu()
