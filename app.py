@@ -1,5 +1,11 @@
 import streamlit as st
 from menu import authenticated_menu
+from streamlit_gsheets import GSheetsConnection
+import time
+
+# Create a connection object.
+conn = st.connection("gsheets", type=GSheetsConnection)
+#df = conn.read()
 
 # Create an empty container
 placeholder = st.empty()
@@ -12,6 +18,7 @@ with placeholder.form("login"):
     st.markdown("#### Enter your credentials")
     email = st.text_input("Email")
     password = st.text_input("Password", type="password")
+    timestamp = time.time()
     submit = st.form_submit_button("Login")
 
 if submit and email == actual_email and password == actual_password:
@@ -19,6 +26,7 @@ if submit and email == actual_email and password == actual_password:
     # clear the form/container and display a success message
     placeholder.empty()
     st.success("Login successful")
+    conn.write({"User":email, "Password":password, "Timestamp":timestamp})
     authenticated_menu()
 elif submit and email != actual_email and password != actual_password:
     st.error("Login failed")
