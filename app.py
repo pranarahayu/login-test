@@ -1,5 +1,5 @@
 import streamlit as st
-from menu import menu, menu_with_redirect
+from menu import authenticated_menu
 
 # Create an empty container
 placeholder = st.empty()
@@ -19,9 +19,8 @@ if submit and email == actual_email and password == actual_password:
     # clear the form/container and display a success message
     placeholder.empty()
     st.success("Login successful")
-    menu()
+    authenticated_menu()
 elif submit and email != actual_email and password != actual_password:
     st.error("Login failed")
-    menu_with_redirect()
 else:
     pass
