@@ -25,7 +25,6 @@ if submit and email == actual_email and password == actual_password:
     # clear the form/container and display a success message
     placeholder.empty()
     st.success("Login successful")
-    #df.write({"User":email, "Password":password, "Timestamp":timestamp})
     home_menu()
     #authenticated_menu()
 elif submit and email != actual_email and password != actual_password:
