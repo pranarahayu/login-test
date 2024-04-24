@@ -5,7 +5,7 @@ import time
 
 # Create a connection object.
 conn = st.connection("gsheets", type=GSheetsConnection)
-df = conn.read(st.secrets["datapemain"])
+df = conn.read(st.secrets["data"])
 
 # Create an empty container
 placeholder = st.empty()
