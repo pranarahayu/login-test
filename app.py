@@ -3,14 +3,10 @@ from menu import authenticated_menu, home_menu
 import openpyxl
 from openpyxl import load_workbook
 import time
-from io import BytesIO
-import urllib
 
-def load_workbook_from_url(url):
-    file = urllib.request.urlopen(url).read()
-    return load_workbook(filename = BytesIO(file))
-
-wb = load_workbook_from_url(st.secrets["akses"]).worksheets[0]
+conn = st.connection('tidb', type='sql')
+df = conn.query('SELECT * from mytable;', ttl=600)
+st.write(df)
 
 # Create an empty container
 placeholder = st.empty()
@@ -30,8 +26,6 @@ if submit and email == actual_email and password == actual_password:
     # If the form is submitted and the email and password are correct,
     # clear the form/container and display a success message
     placeholder.empty()
-    row = [email,password,timestamp]
-    wb.append_row(row)
     home_menu()
     st.success("Login successful")
     #authenticated_menu()
