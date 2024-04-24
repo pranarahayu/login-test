@@ -10,4 +10,4 @@ yellowbrick==1.4
 yattag
 xlsxwriter
 sqlalchemy
-mysqlclient-python
+mysqlclient==2.2.4
