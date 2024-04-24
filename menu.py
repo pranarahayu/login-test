@@ -5,7 +5,6 @@ def authenticated_menu():
     # Show a navigation menu for authenticated users
     st.sidebar.page_link("1_Home.py", label="Statistics")
     st.sidebar.page_link("2_Season_Statistics.py", label="Statistics")
-    st.sidebar.page_link("3_Player_Detailed.py", label="Player Stats")
 
 def unauthenticated_menu():
     # Show a navigation menu for unauthenticated users
