@@ -4,10 +4,6 @@ import openpyxl
 from openpyxl import load_workbook
 import time
 
-conn = st.connection('tidb', type='sql')
-df = conn.query('SELECT * from mytable;', ttl=600)
-st.write(df)
-
 # Create an empty container
 placeholder = st.empty()
 
