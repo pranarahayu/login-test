@@ -10,4 +10,4 @@ yellowbrick==1.4
 yattag
 xlsxwriter
 sqlalchemy
-MySQLdb
+mysqlclient-python
