@@ -4,10 +4,14 @@ from menu import authenticated_menu
 import time
 import gspread
 
-gc = gspread.service_account()
+from oauth2client.service_account import ServiceAccountCredentials
+scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
+
+creds = ServiceAccountCredentials.from_json_keyfile_name('testingdb-b6d4d-d0a2646c069a.json', scope)
+client = gspread.authorize(creds)
 
 # Open a sheet from a spreadsheet in one go
-wks = gc.open(st.secrets["data"]).worksheet('Sheet1')
+wks = client.open(st.secrets["data"]).worksheet('Sheet1')
 
 # Create an empty container
 placeholder = st.empty()
