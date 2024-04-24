@@ -3,8 +3,14 @@ from menu import authenticated_menu, home_menu
 import openpyxl
 from openpyxl import load_workbook
 import time
+from io import BytesIO
+import urllib
 
-wb = load_workbook(st.secrets["akses"]).worksheets[0]
+def load_workbook_from_url(url):
+    file = urllib.request.urlopen(url).read()
+    return load_workbook(filename = BytesIO(file))
+
+wb = load_workbook_from_url(st.secrets["akses"]).worksheets[0]
 
 # Create an empty container
 placeholder = st.empty()
