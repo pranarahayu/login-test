@@ -18,7 +18,7 @@ with placeholder.form("login"):
     st.markdown("#### Enter your credentials")
     email = st.text_input("Email")
     password = st.text_input("Password", type="password")
-    waktus = time.timestamp()
+    waktus = time.time()
     submit = st.form_submit_button("Login")
 
 if submit and email == actual_email and password == actual_password:
