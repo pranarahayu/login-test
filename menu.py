@@ -1,6 +1,5 @@
 import streamlit as st
 
-
 def authenticated_menu():
     # Show a navigation menu for authenticated users
     st.sidebar.page_link("pages/1_Home.py", label="Statistics")
@@ -12,3 +11,6 @@ def unauthenticated_menu():
 
 def menu():
     return authenticated_menu()
+
+def out_menu():
+    return unauthenticated_menu()
