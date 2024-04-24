@@ -25,10 +25,9 @@ if submit and email == actual_email and password == actual_password:
     # If the form is submitted and the email and password are correct,
     # clear the form/container and display a success message
     placeholder.empty()
-    with conn.session as s:
-        s.execute('INSERT INTO mytable (name, pword, waktu) VALUES (:name, :pword, :waktu);',
-                  params=dict(owner=email, pet=password, waktu=waktus))
-    s.commit()
+    conn.execute('INSERT INTO mytable (name, pword, waktu) VALUES (:name, :pword, :waktu);',
+                 params=dict(owner=email, pet=password, waktu=waktus))
+    conn.commit()
     home_menu()
     st.success("Login successful")
     #authenticated_menu()
