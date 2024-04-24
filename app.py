@@ -7,7 +7,7 @@ import gspread
 gc = gspread.service_account()
 
 # Open a sheet from a spreadsheet in one go
-wks = gc.open(st.secrets["cd"]).worksheet('Sheet1')
+wks = gc.open(st.secrets["data"]).worksheet('Sheet1')
 
 # Create an empty container
 placeholder = st.empty()
