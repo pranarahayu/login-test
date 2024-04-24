@@ -2,7 +2,7 @@ import streamlit as st
 from menu import authenticated_menu, home_menu
 import openpyxl
 from openpyxl import load_workbook
-import time
+from datetime import datetime
 from st_supabase_connection import SupabaseConnection
 
 conn = st.connection("supabase",type=SupabaseConnection)
@@ -18,7 +18,7 @@ with placeholder.form("login"):
     st.markdown("#### Enter your credentials")
     email = st.text_input("Email")
     password = st.text_input("Password", type="password")
-    waktus = time.time()
+    waktus = datetime.now()
     submit = st.form_submit_button("Login")
 
 if submit and email == actual_email and password == actual_password:
