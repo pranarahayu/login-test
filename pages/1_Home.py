@@ -12,11 +12,6 @@ conn = st.connection("supabase",type=SupabaseConnection)
 
 # Perform query.
 rows = conn.query("*", table="mytable", ttl="10m").execute()
-df = pd.DataFrame(columns=['username','time','date'])
-df2 = pd.DataFrame(rows.data)
-for row in rows.data:
-  df['username'] = row['name']
-  df['time'] = row['waktu']
-  df['date'] = row['tanggal']
-st.write(df)
-st.write(df2)
+df = pd.DataFrame(rows.data)
+temp = df.groupby(['tanggal'], as_index=False).count()
+st.write(temp)
