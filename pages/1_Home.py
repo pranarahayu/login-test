@@ -18,10 +18,10 @@ df = pd.DataFrame(rows.data)
 df['tanggal'] = pd.to_datetime(df['tanggal'])
 df['waktu'] = pd.to_datetime(df['waktu'])
 
-temp = df[['tanggal','name']]
-temp['tanggal'] = temp['tanggal'].dt.strftime('%d/%m/%Y')
-temp = temp.groupby(['tanggal'], as_index=False).count()
-st.line_chart(temp, x="tanggal", y="name")
+temp = df[['tanggal','name']].rename(columns={'tanggal':'date','name':'count'})
+temp['date'] = temp['date'].dt.strftime('%d/%m/%Y')
+temp = temp.groupby(['date'], as_index=False).count()
+st.line_chart(temp, x="date", y="count")
 
 us = df['name'][len(df)-1]
 tg = str((df['tanggal'][len(df)-1]).strftime("%d/%m/%Y"))
