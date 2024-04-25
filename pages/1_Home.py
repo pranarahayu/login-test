@@ -1,6 +1,7 @@
 import streamlit as st
 from menu import menu
 from st_supabase_connection import SupabaseConnection
+import pandas as pd
 
 menu()
 st.title("This page is available to all users")
