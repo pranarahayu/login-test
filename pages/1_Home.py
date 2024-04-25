@@ -16,5 +16,5 @@ df = pd.DataFrame(rows.data)
 temp = df[['tanggal','name']]
 temp = temp.groupby(['tanggal'], as_index=False).count()
 #st.write('last accessed by '+df['name'][len(df)+1]+' at '+df['tanggal'][len(df)+1]+' - '+df['waktu'][len(df)+1])
-st.line_chart(temp)
+st.line_chart(temp, x="tanggal", y="name")
 st.write(temp)
