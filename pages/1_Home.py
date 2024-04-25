@@ -23,6 +23,7 @@ us = df['name'][len(df)-1]
 tg = str((df['tanggal'][len(df)-1]).strftime("%d/%m/%Y"))
 wts = (df['waktu'][len(df)-1])
 jkt = wts + timedelta(hours=7)
-wt = str((format(jkt, '%H:%M:%S')).strftime("%X"))
+wt = jkt
+#wt = str((format(jkt, '%H:%M:%S')).strftime("%X"))
 #wt = str((df['waktu'][len(df)-1]).strftime("%X"))
 st.write('Terakhir diakses oleh '+us+' pada '+tg+' pukul '+wt)
