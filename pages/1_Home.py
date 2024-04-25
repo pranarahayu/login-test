@@ -11,7 +11,6 @@ st.markdown(f"You are currently logged in")
 conn = st.connection("supabase",type=SupabaseConnection)
 
 # Perform query.
-@st.cache_data(ttl=600)
 rows = conn.query("*", table="mytable", ttl="10m").execute()
 df = pd.DataFrame(rows.data)
 temp = df[['tanggal','name']]
