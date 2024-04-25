@@ -13,9 +13,10 @@ conn = st.connection("supabase",type=SupabaseConnection)
 # Perform query.
 rows = conn.query("*", table="mytable", ttl="10m").execute()
 df = pd.DataFrame(columns=['username','time','date'])
+df2 = pd.DataFrame(list(d.items()))
 for row in rows.data:
   df['username'] = row['name']
   df['time'] = row['waktu']
   df['date'] = row['tanggal']
 st.write(df)
-st.write(rows)
+st.write(df2)
