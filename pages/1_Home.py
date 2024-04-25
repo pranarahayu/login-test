@@ -10,7 +10,6 @@ st.markdown(f"You are currently logged in")
 # Initialize connection.
 conn = st.connection("supabase",type=SupabaseConnection)
 
-@st.cache_data(ttl=600)
 # Perform query.
 rows = conn.query("*", table="mytable", ttl="10m").execute()
 df = pd.DataFrame(rows.data)
