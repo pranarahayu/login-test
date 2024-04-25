@@ -19,4 +19,7 @@ df['waktu'] = pd.to_datetime(df['waktu'])
 temp = df[['tanggal','name']]
 temp = temp.groupby(['tanggal'], as_index=False).count()
 st.line_chart(temp, x="tanggal", y="name")
-st.write('Terakhir diakses oleh: '+df['name'][len(df)-1]+' pada '+str((df['tanggal'][len(df)-1]).strftime("%d/%m/%Y"))+' pukul '+str((df['waktu'][len(df)-1]))strftime("%X"))
+us = df['name'][len(df)-1]
+tg = str((df['tanggal'][len(df)-1]).strftime("%d/%m/%Y"))
+wt = str((df['waktu'][len(df)-1]).strftime("%X"))
+st.write('Terakhir diakses oleh: '+us+' pada '+tg+' pukul '+wt)
