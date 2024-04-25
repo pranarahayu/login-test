@@ -2,7 +2,7 @@ import streamlit as st
 from menu import menu
 from st_supabase_connection import SupabaseConnection
 import pandas as pd
-from datetime import date
+from datetime import date, timedelta
 
 menu()
 st.title("This page is available to all users")
