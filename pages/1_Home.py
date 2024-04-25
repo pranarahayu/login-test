@@ -13,5 +13,5 @@ conn = st.connection("supabase",type=SupabaseConnection)
 # Perform query.
 rows = conn.query("*", table="mytable", ttl="10m").execute()
 df = pd.DataFrame(rows)
-st.write(df)
+st.write(data)
 st.write(rows)
