@@ -19,7 +19,7 @@ df['tanggal'] = pd.to_datetime(df['tanggal'])
 df['waktu'] = pd.to_datetime(df['waktu'])
 
 temp = df[['tanggal','name']]
-temp['tanggal'] = temp['tanggal'].strftime("%d/%m/%Y")
+temp['tanggal'] = temp['tanggal'].dt.strftime('%d/%m/%Y')
 temp = temp.groupby(['tanggal'], as_index=False).count()
 st.line_chart(temp, x="tanggal", y="name")
 
