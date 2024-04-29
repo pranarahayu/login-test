@@ -20,7 +20,7 @@ if value is not None:
     st.experimental_rerun()
 #st.write(st.session_state['coor'])
 df = pd.DataFrame(st.session_state['coor'])
-df = df.rename(columns={'0':'X','1':'Y'})
+df = df.rename(columns={0:'X',1:'Y'})
 df['X'] = (df['X']*100)/617.65
 df['Y'] = df['Y']/4
 st.write(df)
