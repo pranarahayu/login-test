@@ -7,4 +7,4 @@ st.title("This page is available to all users")
 st.markdown(f"You are currently logged in")
 
 value = streamlit_image_coordinates('./data/lapangkosong2.jpg', width=500, height=500, key="local",)
-st.write(value)
+#st.write(value)
