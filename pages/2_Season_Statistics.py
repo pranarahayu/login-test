@@ -28,6 +28,7 @@ df['X'] = (df['X']*100)/xval
 df['Y'] = df['Y']/4
 if st.button('Delete last'):
     df = df.drop(df.tail(len(df)+1).index,inplace=True)
+    st.write(df)
 st.write(df)
 #coor.append(value)
 #st.write(value)
