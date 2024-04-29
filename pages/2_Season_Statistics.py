@@ -26,6 +26,8 @@ df = pd.DataFrame(st.session_state['coor'])
 df = df.rename(columns={df.columns[0]:'X',df.columns[1]:'Y'})
 df['X'] = (df['X']*100)/xval
 df['Y'] = df['Y']/4
+if st.button('Delete last'):
+    df = df.drop(df.tail(1).index,inplace=True)
 st.write(df)
 #coor.append(value)
 #st.write(value)
