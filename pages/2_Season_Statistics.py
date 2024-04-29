@@ -22,12 +22,12 @@ if value is not None:
     st.session_state['coor'].append(coor)
     st.experimental_rerun()
 df = pd.DataFrame(st.session_state['coor'])
-#df = df.rename(columns={df.columns[0]:'X',df.columns[1]:'Y'})
-#df['X'] = (df['X']*100)/xval
-#df['Y'] = df['Y']/4
+df = df.rename(columns={df.columns[0]:'X',df.columns[1]:'Y'})
+df['X'] = (df['X']*100)/xval
+df['Y'] = df['Y']/4
 
-#st.write(df)
-
+st.write(df)
+'''
 if "data" not in st.session_state:
     st.session_state.data = pd.DataFrame(st.session_state['coor'])
 
@@ -59,3 +59,4 @@ st.data_editor(
     hide_index=True,
     column_config=column_config,
 )
+'''
