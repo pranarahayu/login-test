@@ -17,7 +17,7 @@ if value is not None:
   if coor not in st.session_state['coor']:
     st.session_state['coor'].append(coor)
     st.experimental_rerun()
-
+st.write(st.session_state['coor'])
 #coor.append(value)
 #st.write(value)
 #st.write(coor)
