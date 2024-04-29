@@ -26,7 +26,8 @@ df = df.rename(columns={df.columns[0]:'X',df.columns[1]:'Y'})
 df['X'] = (df['X']*100)/xval
 df['Y'] = df['Y']/4
 
-st.write(df)
+edited_df = st.data_editor(df, num_rows="dynamic")
+#st.write(df)
 '''
 if "data" not in st.session_state:
     st.session_state.data = pd.DataFrame(st.session_state['coor'])
