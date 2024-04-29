@@ -11,7 +11,10 @@ st.markdown(f"You are currently logged in")
 if 'coor' not in st.session_state:
     st.session_state['coor'] = []
 
-value = streamlit_image_coordinates('./data/lapangkosong2.jpg', width=617.65, height=400, key="local",)
+xval = 617.6470588235249
+yval = 400
+
+value = streamlit_image_coordinates('./data/lapangkosong2.jpg', width=xval, height=yval, key="local",)
 
 if value is not None:
   coor = value['x'], value['y']
@@ -21,7 +24,7 @@ if value is not None:
 #st.write(st.session_state['coor'])
 df = pd.DataFrame(st.session_state['coor'])
 df = df.rename(columns={df.columns[0]:'X',df.columns[1]:'Y'})
-df['X'] = (df['X']*100)/617.65
+df['X'] = (df['X']*100)/xval
 df['Y'] = df['Y']/4
 st.write(df)
 #coor.append(value)
