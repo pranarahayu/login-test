@@ -7,15 +7,15 @@ menu()
 st.title("This page is available to all users")
 st.markdown(f"You are currently logged in")
 
-coor = []
-for i in st.session_state['coor']:
-  coor.append(i)
+if 'coor' not in st.session_state:
+    st.session_state['coor'] = []
+
 value = streamlit_image_coordinates('./data/lapangkosong2.jpg', width=617.65, height=400, key="local",)
 
 if value is not None:
-  point = value['x'], value['y']
-  if point not in st.session_state['coor']:
-    st.session_state['coor'].append(point)
+  coor = value['x'], value['y']
+  if coor not in st.session_state['coor']:
+    st.session_state['coor'].append(coor)
     st.experimental_rerun()
 
 #coor.append(value)
