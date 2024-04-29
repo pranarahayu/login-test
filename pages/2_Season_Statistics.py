@@ -2,6 +2,7 @@ import streamlit as st
 from menu import menu
 from streamlit_image_coordinates import streamlit_image_coordinates
 from PIL import Image, ImageDraw
+import pandas as pd
 
 menu()
 st.title("This page is available to all users")
@@ -17,7 +18,9 @@ if value is not None:
   if coor not in st.session_state['coor']:
     st.session_state['coor'].append(coor)
     st.experimental_rerun()
-st.write(st.session_state['coor'])
+#st.write(st.session_state['coor'])
+df = pd.DataFrame(st.session_state['coor'])
+st.write(df)
 #coor.append(value)
 #st.write(value)
 #st.write(coor)
