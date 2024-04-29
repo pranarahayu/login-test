@@ -1,6 +1,7 @@
 import streamlit as st
 from menu import menu
 from streamlit_image_coordinates import streamlit_image_coordinates
+from PIL import Image, ImageDraw
 
 menu()
 st.title("This page is available to all users")
