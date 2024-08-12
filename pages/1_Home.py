@@ -8,25 +8,9 @@ menu()
 st.title("This page is available to all users")
 st.markdown(f"You are currently logged in")
 
-# Initialize connection.
-conn = st.connection("supabase",type=SupabaseConnection)
+conn = st.connection("postgresql", type="sql")
 
 # Perform query.
-rows = conn.query("*", table="mytable", ttl="10m").execute()
-df = pd.DataFrame(rows.data)
+df = conn.query('SELECT * FROM clubs;', ttl="10m")
 
-df['tanggal'] = pd.to_datetime(df['tanggal'])
-df['waktu'] = pd.to_datetime(df['waktu'])
-
-temp = df[['tanggal','name']].rename(columns={'tanggal':'date','name':'access count'})
-temp['date'] = temp['date'].dt.strftime('%d/%m/%Y')
-temp = temp.groupby(['date'], as_index=False).count()
-st.line_chart(temp, x="date", y="access count")
-
-us = df['name'][len(df)-1]
-tg = str((df['tanggal'][len(df)-1]).strftime("%d/%m/%Y"))
-wts = (df['waktu'][len(df)-1])
-jkt = wts + timedelta(hours=7)
-wt = str(jkt.strftime("%X"))
-
-st.write('Last accessed by '+us+' on '+tg+' at '+wt+' WIB')
+st.write(df.head(10))
