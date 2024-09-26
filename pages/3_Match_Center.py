@@ -9,7 +9,7 @@ st.markdown('# Match Center')
 from menu import menu
 menu()
 
-col1, col2, col3, col4 = st.columns(4, spec=[1,2,1])
+col1, col2, col3, col4 = st.columns(4)
 with col1:
   ssn = st.selectbox('Select Season', ['2021/22', '2022/23', '2023/24', '2024/25'], key='1')
 with col2:
@@ -19,7 +19,7 @@ with col3:
 with col4:
   match = st.selectbox('Select Match', ['PERSIB Bandung vs PSBS Biak'], key='4')
 
-col1, col2, col3 = st.columns(3)
+col1, col2, col3 = st.columns(3, spec=[1,2,1])
 with col1:
   st.image('./data/pnet-persib.jpg')
 with col2:
