@@ -15,9 +15,9 @@ with col1:
 with col2:
   komp = st.selectbox('Select Competition', ['Liga 1', 'Liga 2'], key='2')
 with col3:
-  gw = st.selectbox('Select Gameweek', [1, 2, 3, 4]), key='3')
+  gw = st.selectbox('Select Gameweek', [1, 2, 3, 4], key='3')
 with col4:
-  match = st.selectbox('Select Match', ['PERSIB Bandung vs PSBS Biak]), key='4')
+  match = st.selectbox('Select Match', ['PERSIB Bandung vs PSBS Biak'], key='4')
 
 col1, col2, col3 = st.columns(3)
 with col1:
