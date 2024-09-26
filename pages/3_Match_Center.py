@@ -19,7 +19,7 @@ with col3:
 with col4:
   match = st.selectbox('Select Match', ['PERSIB Bandung vs PSBS Biak'], key='4')
 
-col1, col2, col3 = st.columns(3, spec=[1,2,1])
+col1, col2, col3 = st.columns([1,2,1])
 with col1:
   st.image('./data/pnet-persib.jpg')
 with col2:
