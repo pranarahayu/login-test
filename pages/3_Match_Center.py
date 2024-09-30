@@ -22,8 +22,10 @@ with col4:
 col1, col2, col3 = st.columns([1,2,1])
 with col1:
   st.image('./data/pnet-persib.jpg')
+  st.image('./data/amap-psb.jpg')
 with col2:
   st.image('./data/stats.jpg')
   st.image('./data/momentum.jpg')
 with col3:
   st.image('./data/pnet-psbs.jpg')
+  st.image('./data/amap-bik.jpg')
