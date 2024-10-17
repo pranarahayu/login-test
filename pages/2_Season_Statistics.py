@@ -27,8 +27,8 @@ with col1:
         st.error("Please upload the timeline file")
 
 with col2:
-    team = tl['Team'].unique().tolist()
-    filter = st.selectbox('Select Team', team)
+    teams = tl['Team'].unique().tolist()
+    team = st.selectbox('Select Team', teams)
 
 def draw_court(x_min=0, x_max=7.32,
                y_min=0, y_max=2.44,
