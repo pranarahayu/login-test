@@ -18,7 +18,7 @@ from menu import menu
 menu()
 st.title("Untuk Konten LIB")
 
-col1, col2 = st.columns(2)
+col1, col2, col3 = st.columns(3)
 with col1:
     data = st.file_uploader("Upload file timeline excel!")
     try:
@@ -29,6 +29,9 @@ with col1:
 with col2:
     teams = tl['Team'].unique().tolist()
     team = st.selectbox('Select Team', teams)
+
+with col3:
+    color = st.color_picker("Pick A Color", "#000000")
 
 def draw_court(x_min=0, x_max=7.32,
                y_min=0, y_max=2.44,
@@ -74,13 +77,13 @@ def draw_court(x_min=0, x_max=7.32,
 df = tl.copy()
 fig, axs = plt.subplots(nrows=2, ncols=1, figsize=(10, 12), dpi=500)
 fig.subplots_adjust(hspace=-0.3, wspace=-0.3)
-fig.patch.set_facecolor('#0F528C')
+fig.patch.set_facecolor(color)
 axs = axs.flatten()
 
 for i in range(0,2):
-  axs[i].set_facecolor('#0F528C')
+  axs[i].set_facecolor(color)
   if i == 1:
-    pitch = VerticalPitch(pitch_type='wyscout', pitch_color='#0F528C', line_color='#FFFFFF',
+    pitch = VerticalPitch(pitch_type='wyscout', pitch_color=color, line_color='#FFFFFF',
                           corner_arcs=True, goal_type='circle', linewidth=2, half=True)
     pitch.draw(ax=axs[i])
     df_team = df[df['Team'] == team].reset_index(drop=True)
@@ -128,5 +131,9 @@ for i in range(0,2):
       elif (df_team['Action'][j] == 'shoot off target'):
         axs[i].scatter(df_team['P'][j], df_team['Q'][j], s=100,
                        c='#FFFFFF', marker='X', lw=1, ec='#0F528C', zorder=2)
-
+plt.savefig('pizza.jpg', dpi=500, bbox_inches='tight', facecolor=fig.get_facecolor(), edgecolor='none')
 st.pyplot(fig)
+with open('pizza.jpg', 'rb') as img:
+    fn = 'Attempts Map_'+team+'.jpg'
+    btn = st.download_button(label="Download Image", data=img,
+                             file_name=fn, mime="image/jpg")
