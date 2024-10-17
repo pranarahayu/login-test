@@ -7,15 +7,6 @@ from sklearn import preprocessing
 
 from mplsoccer import Pitch, VerticalPitch, PyPizza, Radar, grid
 import matplotlib.pyplot as plt
-import matplotlib.ticker as ticker
-import matplotlib.patheffects as path_effects
-from matplotlib.colors import ListedColormap, LinearSegmentedColormap
-import matplotlib.font_manager as fm
-from matplotlib.legend_handler import HandlerLine2D
-from matplotlib.patches import FancyArrowPatch
-from matplotlib.patches import FancyBboxPatch
-import matplotlib.patches as patches
-from matplotlib.offsetbox import (OffsetImage, AnnotationBbox)
 
 from PIL import Image
 from tempfile import NamedTemporaryFile
