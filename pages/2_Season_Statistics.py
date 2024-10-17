@@ -112,13 +112,13 @@ for i in range(0,2):
     for j in range(len(df_team)):
       if (df_team['Action'][j] == 'penalty goal') or (df_team['Action'][j] == 'goal'):
         axs[i].scatter(df_team['P'][j], df_team['Q'][j], s=100,
-                       c='#FFFFFF', marker='o', lw=1, ec='#0F528C')
+                       c='#7ED958', marker='o', lw=1, ec='#0F528C', zorder=2)
       elif (df_team['Action'][j] == 'shoot on target'):
         axs[i].scatter(df_team['P'][j], df_team['Q'][j], s=100,
-                       c='#FFFFFF', marker='H', lw=1, ec='#0F528C')
+                       c='#F2FF00', marker='H', lw=1, ec='#0F528C', zorder=2)
       elif (df_team['Action'][j] == 'shoot off target'):
         axs[i].scatter(df_team['P'][j], df_team['Q'][j], s=100,
-                       c='#FFFFFF', marker='X', lw=1, ec='#0F528C', zorder=2)
+                       c='#A6A6A6', marker='X', lw=1, ec='#0F528C', zorder=2)
 plt.savefig('pizza.jpg', dpi=500, bbox_inches='tight', facecolor=fig.get_facecolor(), edgecolor='none')
 st.pyplot(fig)
 with open('pizza.jpg', 'rb') as img:
