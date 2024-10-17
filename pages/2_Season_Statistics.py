@@ -11,15 +11,15 @@ col1, col2 = st.columns(2)
 with col1:
     data = st.file_uploader("Upload file timeline excel!")
     try:
-        tl = pd.read_excel(tl_data, skiprows=[0])
+        tl = pd.read_excel(data, skiprows=[0])
     except ValueError:
         st.error("Please upload the timeline file")
 
 with col2:
-    team = data['Team'].unique().tolist()
+    team = tl['Team'].unique().tolist()
     filter = st.selectbox('Select Team', [team1, team2])
 
-df = data.copy()
+df = tl.copy()
 fig, axs = plt.subplots(nrows=2, ncols=1, figsize=(10, 12), dpi=500)
 fig.subplots_adjust(hspace=-0.3, wspace=-0.3)
 fig.patch.set_facecolor('#0F528C')
