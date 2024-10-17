@@ -30,6 +30,47 @@ with col2:
     team = tl['Team'].unique().tolist()
     filter = st.selectbox('Select Team', team)
 
+def draw_court(x_min=0, x_max=7.32,
+               y_min=0, y_max=2.44,
+               line_color='grey',
+               line_thickness=15,
+               grass_color='#0E7A0E',
+               net_thick=2,
+               max_v=16, max_h=8,
+               ax=None
+               ):
+
+  lx1 = [x_min, x_max, x_max, x_min, x_min]
+  ly1 = [y_min, y_min, y_max, y_max, y_min]
+  lx2 = [x_min, x_max, x_max, x_min, x_min, x_max]
+  ly2 = [y_min, y_min, y_max, y_max, y_min, y_min]
+
+  garis = [[lx1, ly1], [lx2, ly2]]
+  ax.axis('off')
+
+  for line in garis:
+    ax.plot(line[0], line[1],
+            color=line_color,
+            lw=line_thickness)
+
+  ax.plot([x_min-0.75,x_max+0.75],[y_min,y_min],
+          color=grass_color,
+          lw=line_thickness)
+
+  start = y_max/max_h
+  hjar = [start*x for x in range(1,max_h)]
+  for h in hjar:
+    ax.plot([x_min,x_max],[h,h],zorder=-1,
+            color=line_color,lw=net_thick,alpha=0.25)
+    
+  start = x_max/max_v
+  vjar = [start*x for x in range(1,max_v)]
+  for v in vjar:
+    ax.plot([v,v],[y_min,y_max],zorder=-1,
+            color=line_color,lw=net_thick,alpha=0.25)
+
+  return ax
+
 df = tl.copy()
 fig, axs = plt.subplots(nrows=2, ncols=1, figsize=(10, 12), dpi=500)
 fig.subplots_adjust(hspace=-0.3, wspace=-0.3)
