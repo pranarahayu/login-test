@@ -17,7 +17,7 @@ with col1:
 
 with col2:
     team = tl['Team'].unique().tolist()
-    filter = st.selectbox('Select Team', [team1, team2])
+    filter = st.selectbox('Select Team', team)
 
 df = tl.copy()
 fig, axs = plt.subplots(nrows=2, ncols=1, figsize=(10, 12), dpi=500)
