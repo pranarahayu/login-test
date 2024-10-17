@@ -112,10 +112,10 @@ for i in range(0,2):
     for j in range(len(df_team)):
       if (df_team['Action'][j] == 'penalty goal') or (df_team['Action'][j] == 'goal'):
         axs[i].scatter(df_team['P'][j], df_team['Q'][j], s=100,
-                       c='#7ED958', marker='o', lw=1, ec='#0F528C', zorder=2)
+                       c='#7ED958', marker='o', lw=1, ec='#0F528C')
       elif (df_team['Action'][j] == 'shoot on target'):
         axs[i].scatter(df_team['P'][j], df_team['Q'][j], s=100,
-                       c='#F2FF00', marker='H', lw=1, ec='#0F528C', zorder=2)
+                       c='#F2FF00', marker='H', lw=1, ec='#0F528C')
       elif (df_team['Action'][j] == 'shoot off target'):
         axs[i].scatter(df_team['P'][j], df_team['Q'][j], s=100,
                        c='#A6A6A6', marker='X', lw=1, ec='#0F528C', zorder=2)
