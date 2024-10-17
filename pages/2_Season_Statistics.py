@@ -78,16 +78,16 @@ for i in range(0,2):
     for j in range(len(df_team)):
       if (df_team['Action'][j] == 'penalty goal') or (df_team['Action'][j] == 'goal'):
         axs[i].scatter(df_team['Y1'][j], df_team['X1'][j], s=100,
-                       c='#7ED958', marker='o', lw=1, ec='#0F528C')
+                       c='#7ED958', marker='o', lw=1, ec='#FFFFFF')
       elif (df_team['Action'][j] == 'shoot on target'):
         axs[i].scatter(df_team['Y1'][j], df_team['X1'][j], s=100,
-                       c='#F2FF00', marker='H', lw=1, ec='#0F528C')
+                       c='#F2FF00', marker='H', lw=1, ec='#FFFFFF')
       elif (df_team['Action'][j] == 'shoot off target'):
         axs[i].scatter(df_team['Y1'][j], df_team['X1'][j], s=100,
-                       c='#A6A6A6', marker='X', lw=1, ec='#0F528C')
+                       c='#F48222', marker='X', lw=1, ec='#FFFFFF')
       elif (df_team['Action'][j] == 'shoot blocked'):
         axs[i].scatter(df_team['Y1'][j], df_team['X1'][j], s=100,
-                       c='#F48222', marker='s', lw=1, ec='#0F528C')
+                       c='#BA0000', marker='s', lw=1, ec='#FFFFFF')
   else:
     draw_court(x_min=0, x_max=7.32*0.5,
                y_min=0, y_max=2.44*0.5,
@@ -112,13 +112,13 @@ for i in range(0,2):
     for j in range(len(df_team)):
       if (df_team['Action'][j] == 'penalty goal') or (df_team['Action'][j] == 'goal'):
         axs[i].scatter(df_team['P'][j], df_team['Q'][j], s=100,
-                       c='#7ED958', marker='o', lw=1, ec='#0F528C')
+                       c='#7ED958', marker='o', lw=1, ec='#FFFFFF')
       elif (df_team['Action'][j] == 'shoot on target'):
         axs[i].scatter(df_team['P'][j], df_team['Q'][j], s=100,
-                       c='#F2FF00', marker='H', lw=1, ec='#0F528C')
+                       c='#F2FF00', marker='H', lw=1, ec='#FFFFFF')
       elif (df_team['Action'][j] == 'shoot off target'):
         axs[i].scatter(df_team['P'][j], df_team['Q'][j], s=100,
-                       c='#A6A6A6', marker='X', lw=1, ec='#0F528C', zorder=2)
+                       c='#F48222', marker='X', lw=1, ec='#FFFFFF', zorder=2)
 plt.savefig('pizza.jpg', dpi=500, bbox_inches='tight', facecolor=fig.get_facecolor(), edgecolor='none')
 st.pyplot(fig)
 with open('pizza.jpg', 'rb') as img:
