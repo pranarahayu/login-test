@@ -77,16 +77,16 @@ for i in range(0,2):
     df_team = df[df['Team'] == team].reset_index(drop=True)
     for j in range(len(df_team)):
       if (df_team['Action'][j] == 'penalty goal') or (df_team['Action'][j] == 'goal'):
-        axs[i].scatter(df_team['Y1'][j], df_team['X1'][j], s=250,
+        axs[i].scatter(df_team['Y1'][j], df_team['X1'][j], s=150,
                        c='#7ED958', marker='o', lw=1, ec='#FFFFFF')
       elif (df_team['Action'][j] == 'shoot on target'):
-        axs[i].scatter(df_team['Y1'][j], df_team['X1'][j], s=250,
+        axs[i].scatter(df_team['Y1'][j], df_team['X1'][j], s=150,
                        c='#F2FF00', marker='H', lw=1, ec='#FFFFFF')
       elif (df_team['Action'][j] == 'shoot off target'):
-        axs[i].scatter(df_team['Y1'][j], df_team['X1'][j], s=250,
+        axs[i].scatter(df_team['Y1'][j], df_team['X1'][j], s=150,
                        c='#F48222', marker='X', lw=1, ec='#FFFFFF')
       elif (df_team['Action'][j] == 'shoot blocked'):
-        axs[i].scatter(df_team['Y1'][j], df_team['X1'][j], s=250,
+        axs[i].scatter(df_team['Y1'][j], df_team['X1'][j], s=150,
                        c='#BA0000', marker='s', lw=1, ec='#FFFFFF')
   else:
     draw_court(x_min=0, x_max=7.32*0.5,
@@ -111,13 +111,13 @@ for i in range(0,2):
           df_team['Q'][x] = df_team['Q'][x]+0.25
     for j in range(len(df_team)):
       if (df_team['Action'][j] == 'penalty goal') or (df_team['Action'][j] == 'goal'):
-        axs[i].scatter(df_team['P'][j], df_team['Q'][j], s=250,
+        axs[i].scatter(df_team['P'][j], df_team['Q'][j], s=150,
                        c='#7ED958', marker='o', lw=1, ec='#FFFFFF')
       elif (df_team['Action'][j] == 'shoot on target'):
-        axs[i].scatter(df_team['P'][j], df_team['Q'][j], s=250,
+        axs[i].scatter(df_team['P'][j], df_team['Q'][j], s=150,
                        c='#F2FF00', marker='H', lw=1, ec='#FFFFFF')
       elif (df_team['Action'][j] == 'shoot off target'):
-        axs[i].scatter(df_team['P'][j], df_team['Q'][j], s=250,
+        axs[i].scatter(df_team['P'][j], df_team['Q'][j], s=150,
                        c='#F48222', marker='X', lw=1, ec='#FFFFFF', zorder=2)
 plt.savefig('pizza.jpg', dpi=500, bbox_inches='tight', facecolor=fig.get_facecolor(), edgecolor='none')
 st.pyplot(fig)
