@@ -60,18 +60,6 @@ def draw_court(x_min=0, x_max=7.32,
           color=grass_color,
           lw=line_thickness)
 
-  start = y_max/max_h
-  hjar = [start*x for x in range(1,max_h)]
-  for h in hjar:
-    ax.plot([x_min,x_max],[h,h],zorder=-1,
-            color=line_color,lw=net_thick,alpha=0.25)
-    
-  start = x_max/max_v
-  vjar = [start*x for x in range(1,max_v)]
-  for v in vjar:
-    ax.plot([v,v],[y_min,y_max],zorder=-1,
-            color=line_color,lw=net_thick,alpha=0.25)
-
   return ax
 
 df = tl.copy()
@@ -84,7 +72,7 @@ for i in range(0,2):
   axs[i].set_facecolor(color)
   if i == 1:
     pitch = VerticalPitch(pitch_type='wyscout', pitch_color=color, line_color='#FFFFFF',
-                          corner_arcs=True, goal_type='circle', linewidth=2, half=True)
+                          corner_arcs=True, goal_type='circle', linewidth=2, half=True, pad_bottom=0.2)
     pitch.draw(ax=axs[i])
     df_team = df[df['Team'] == team].reset_index(drop=True)
     for j in range(len(df_team)):
