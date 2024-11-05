@@ -13,3 +13,4 @@ st-supabase-connection
 streamlit_image_coordinates
 psycopg2-binary
 sqlalchemy
+seaborn
