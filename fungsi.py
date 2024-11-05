@@ -367,7 +367,7 @@ def beli_pizza(komp, pos, klub, name, data, mins):
   #temp = temp.drop(['Team'], axis=1)
 
   avg_player = temp[temp['Name'].str.contains('Average')]
-  av_name = list(avg_player['Name'])[0]
+  av_name = avg_player['Name'].values[0]
   params = list(temp.columns)
   params = params[1:]
 
