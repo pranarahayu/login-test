@@ -57,7 +57,7 @@ with col1:
                              file_name=fn, mime="image/jpg")
 
 with col2:
-  dis = beli_pizza('Liga 1', pos, klub, player, rank_p90, mins)
+  dis = player_dist('Liga 1', pos, klub, player, rank_p90, mins)
   st.pyplot(dis)
   with open('dist.jpg', 'rb') as img:
     fn = 'Distribution_'+player+'.jpg'
