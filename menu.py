@@ -5,7 +5,8 @@ def authenticated_menu():
     st.sidebar.page_link("pages/1_Home.py", label="Home")
     st.sidebar.page_link("pages/2_Season_Statistics.py", label="Statistics")
     st.sidebar.page_link("pages/3_Match_Center.py", label="Match Center")
-    st.sidebar.page_link("pages/4_Log_Out.py", label="Log Out")
+    st.sidebar.page_link("pages/4_Player_Radar.py", label="Player Radar")
+    st.sidebar.page_link("pages/5_Log_Out.py", label="Log Out")
 
 def unauthenticated_menu():
     # Show a navigation menu for unauthenticated users
