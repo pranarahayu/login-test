@@ -16,6 +16,7 @@ from matplotlib.patches import FancyArrowPatch
 from matplotlib.patches import FancyBboxPatch
 import matplotlib.patches as patches
 from matplotlib.offsetbox import (OffsetImage, AnnotationBbox)
+import seaborn as sns
 
 from PIL import Image
 from tempfile import NamedTemporaryFile
