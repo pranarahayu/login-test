@@ -15,7 +15,7 @@ from matplotlib.patches import FancyBboxPatch
 
 from fungsi import proses_tl
 from fungsi import get_sum90
-from fungsi import pct
+from fungsi import get_pct
 from fungsi import beli_pizza
 from fungsi import player_dist
 
