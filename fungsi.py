@@ -519,7 +519,7 @@ def beli_pizza(komp, pos, klub, name, data, mins):
   DC_to_NFC = lambda x: FC_to_NFC(DC_to_FC(x))
 
   logo_ax = fig.add_axes([0.73, 0.015, 0.15, 0.05], anchor = "NE")
-  club_icon = Image.open('logo2.png')
+  club_icon = Image.open('./data/logo2.png')
   logo_ax.imshow(club_icon)
   logo_ax.axis("off")
 
@@ -608,7 +608,7 @@ def player_dist(komp, pos, klub, player, data, mins):
   DC_to_NFC = lambda x: FC_to_NFC(DC_to_FC(x))
 
   logo_ax = fig.add_axes([0.725, 0.877, 0.15, 0.05], anchor = "E")
-  club_icon = Image.open('logo2.png')
+  club_icon = Image.open('./data/logo2.png')
   logo_ax.imshow(club_icon)
   logo_ax.axis("off")
     
