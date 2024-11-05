@@ -12,6 +12,7 @@ import matplotlib.patches as patches
 from matplotlib.offsetbox import (OffsetImage, AnnotationBbox)
 import matplotlib.font_manager as fm
 from matplotlib.patches import FancyBboxPatch
+import seaborn as sns
 
 from fungsi import proses_tl
 from fungsi import get_sum90
